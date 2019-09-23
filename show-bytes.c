@@ -116,6 +116,12 @@ void show(byte_pointer out, int len) {
 void show_short(short x){
     show((byte_pointer) &x, sizeof(short));
 }
+void show_long(long x){
+    show((byte_pointer) &x, sizeof(long));
+}
+void show_double(double x){
+    show((byte_pointer) &x, sizeof(double));
+}
 
 int main(int argc, char *argv[])
 {
@@ -140,6 +146,10 @@ int main(int argc, char *argv[])
 	string_leg();
     short y=358;
     show_short(y);
+    long z=274877906944;
+    show_long(z);
+    double s=3.1415926535;
+    show_double(s);
     }
     return 0;
 }
