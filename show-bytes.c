@@ -105,6 +105,18 @@ void show_twocomp()
 /* $end show-twocomp */
 }
 
+void show(byte_pointer out, int len) {
+    int i,j;
+    printf("0x");
+    for (i=0 ; i < len; i++){
+        j=(int)len-(int)i-1;
+        printf("%0x",out[j]);}
+}
+
+void show_short(short x){
+    show((byte_pointer) &x, sizeof(short));
+}
+
 int main(int argc, char *argv[])
 {
     int val = 12345;
@@ -126,6 +138,8 @@ int main(int argc, char *argv[])
 	string_ueg();
 	printf("Calling string_leg\n");
 	string_leg();
+    short y=358;
+    show_short(y);
     }
     return 0;
 }
